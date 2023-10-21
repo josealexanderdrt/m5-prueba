@@ -1,0 +1,21 @@
+
+.active {
+  box-shadow: 2px 2px 8px 0 rgba(128, 128, 128, 0.5), 4px 4px 16px 0 rgba(128, 128, 128, 0.7), 0px 0px 24px 2px rgba(128, 128, 128, 1);
+border-radius: 10px;
+
+}
+
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+
+.grid-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.headerBox {
+  background-image: url(assets/header_bg.jpg);
+}
