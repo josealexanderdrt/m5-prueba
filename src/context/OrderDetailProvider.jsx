@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { PizzaContext } from "../context/PizzaProvider";
-import axios from "axios";
+
 
 export const OrderDetailContext = createContext();
 const OrderDetailProvider = ({ children }) => {

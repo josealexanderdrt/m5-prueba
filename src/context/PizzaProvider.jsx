@@ -20,6 +20,16 @@ const PizzaProvider = ({ children }) => {
     }
   };
 
+  
+  function formatNumber(number){
+    return new Intl.NumberFormat( "es-CL",{
+      style: 'currency',
+      currency:'CLP'
+    }
+    ).format(number)
+  } 
+  
+
   useEffect(()=>{
     getPizzas()
   }, [])
@@ -30,7 +40,8 @@ const PizzaProvider = ({ children }) => {
   
   <PizzaContext.Provider value={{
     pizzas,
-    setPizzas
+    setPizzas,
+    formatNumber
   }} >
 
     {children}

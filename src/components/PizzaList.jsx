@@ -5,9 +5,10 @@ import { Card, Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const PizzaList = () => {
-  const { pizzas, setPizzas } = useContext(PizzaContext);
+  const { pizzas, formatNumber } = useContext(PizzaContext);
   const { addToOrderDetail } = useContext(OrderDetailContext);
 
+  
 
 const navigate = useNavigate()
 const goToPizzaDetail = (idPizza) =>{
@@ -40,7 +41,7 @@ const goToPizzaDetail = (idPizza) =>{
                       <li key={j}> {ingredient} </li>
                     ))}
                   </ul>
-                <Card.Text>{pizza.price}</Card.Text>
+                <Card.Text> {formatNumber(pizza.price)} </Card.Text>
 
                 <Container className="d-flex">
                   <Button variant="dark" className="m-1 p-1"
