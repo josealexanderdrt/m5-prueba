@@ -18,4 +18,10 @@ border-radius: 10px;
 
 .headerBox {
   background-image: url(assets/header_bg.jpg);
+  color: beige;
+  height: 150px;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
 }
+

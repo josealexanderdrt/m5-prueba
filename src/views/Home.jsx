@@ -1,9 +1,10 @@
 import PizzaList from "../components/PizzaList";
+import Header from "../components/Header";
 
 const Home = () => {
   return (
     <>
-      <p>Hola</p>
+      <Header/>
       <PizzaList />
     </>
   );

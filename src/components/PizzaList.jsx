@@ -40,12 +40,12 @@ const goToPizzaDetail = (idPizza) =>{
                 <Card.Text>{pizza.price}</Card.Text>
 
                 <Container className="d-flex">
-                  <Button variant="primary" className="m-1 p-1"
+                  <Button variant="dark" className="m-1 p-1"
                     onClick={() => goToPizzaDetail(pizza.id)}>
                     Ver Más
                   </Button>
                   <Button
-                    variant="primary"
+                    variant="dark"
                     className="m-1 p-1"
                     onClick={() => addToOrderDetail(pizza.id)}
                   >

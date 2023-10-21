@@ -25,14 +25,14 @@ const OrderDetail = () => {
             </div>       
           </div>
           <Button
-                    variant="primary"
+                    variant="dark"
                     className="m-1 p-1"
                     onClick={() => addToOrderDetail(pizza.id)}
                   >
                     +
                   </Button>
                   <Button
-                    variant="primary"
+                    variant="dark"
                     className="m-1 p-1"
                     onClick={() => minusToOrderDetail(pizza.id)}
                   >

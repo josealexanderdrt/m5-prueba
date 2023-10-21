@@ -39,13 +39,13 @@ const PizzaDetail = () => {
                       </Card.Text>
                   <ul>
                     {pizzaSelected.ingredients.map((ingredient, j) => (
-                      <li key={j}> {ingredient} </li>
+                      <li key={j}> { ingredient} </li>
                     ))}
                   </ul>
                 <Card.Text>{pizzaSelected.price}</Card.Text>
                 <Container className="d-flex">
                   <Button
-                    variant="primary"
+                    variant="dark"
                     className="m-1 p-1"
                     onClick={() => addToOrderDetail(pizzaSelected.id)}
                   >
