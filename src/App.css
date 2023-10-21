@@ -30,3 +30,17 @@ border-radius: 10px;
 .wbutton{
   width: 90px;
 }
+
+.boxOrderDetail{
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 90%;
+  margin: 10px;
+}
+
+.boxOrderDetaiImg{
+  width: 200px;
+background-size: cover;
+
+}
