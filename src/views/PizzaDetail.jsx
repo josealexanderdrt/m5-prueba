@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const PizzaDetail = () => {
     const { idPizza } = useParams();
-    const { pizzas, setPizzas } = useContext(PizzaContext);
+    const { pizzas, formatNumber } = useContext(PizzaContext);
     const { addToOrderDetail} = useContext(OrderDetailContext);
 
 
@@ -23,10 +23,10 @@ const PizzaDetail = () => {
 
   return (
     <>
-     <div className="">
+     <div className="boxPizzaSelected">
     {pizzaSelected?(
-          <Container className="">
-            <Card style={{ width: "18rem" }}>
+          <Container className=" d-flex">
+            <Card style={{ width: "28rem" }}>
               <Card.Img
                 variant="top"
                 src={pizzaSelected.img}
@@ -34,6 +34,11 @@ const PizzaDetail = () => {
               />
               <Card.Body>
                 <Card.Title>{pizzaSelected.name} </Card.Title>
+                <hr />
+                <Card.Text>
+                  {pizzaSelected.desc}
+                </Card.Text>
+
                 <Card.Text>
                   <strong> Ingredientes</strong>
                       </Card.Text>
@@ -42,14 +47,17 @@ const PizzaDetail = () => {
                       <li key={j}> { ingredient} </li>
                     ))}
                   </ul>
-                <Card.Text>{pizzaSelected.price}</Card.Text>
+                  <Card.Text
+                className="text-center">
+                  <strong>{formatNumber(pizzaSelected.price)}</strong> 
+                    </Card.Text>
                 <Container className="d-flex">
                   <Button
-                    variant="dark"
-                    className="m-1 p-1"
+                     variant="dark"
+                     className="m-1 p-1 wbutton"
                     onClick={() => addToOrderDetail(pizzaSelected.id)}
                   >
-                    Añadir
+                    Añadir🛒
                   </Button>
                 </Container>
               </Card.Body>
