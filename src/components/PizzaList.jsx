@@ -13,6 +13,8 @@ const PizzaList = () => {
 const navigate = useNavigate()
 const goToPizzaDetail = (idPizza) =>{
     navigate(`/pizza/${idPizza}`)
+
+
 }
 
   
@@ -41,19 +43,23 @@ const goToPizzaDetail = (idPizza) =>{
                       <li key={j}> {ingredient} </li>
                     ))}
                   </ul>
-                <Card.Text> {formatNumber(pizza.price)} </Card.Text>
+                <Card.Text
+                className="text-center">
+                  <strong>{formatNumber(pizza.price)}</strong> 
+                    </Card.Text>
 
                 <Container className="d-flex">
-                  <Button variant="dark" className="m-1 p-1"
+                  <Button variant="dark" className="m-1 p-1 wbutton" 
                     onClick={() => goToPizzaDetail(pizza.id)}>
-                    Ver Más
+                    Ver Más👀
                   </Button>
                   <Button
                     variant="dark"
-                    className="m-1 p-1"
+                    className="m-1 p-1 wbutton"
                     onClick={() => addToOrderDetail(pizza.id)}
+                
                   >
-                    Añadir
+                    Añadir🛒
                   </Button>
                 </Container>
               </Card.Body>

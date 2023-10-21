@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { PizzaContext } from "../context/PizzaProvider";
-
+import { toast } from "react-toastify";
 
 export const OrderDetailContext = createContext();
 const OrderDetailProvider = ({ children }) => {
@@ -20,28 +20,24 @@ const OrderDetailProvider = ({ children }) => {
       const pizzaEnOrden = orderList.find((pizza) => pizza.id === id);
       if (pizzaEnOrden) {
         console.log("modifica");
-        // Crea una copia del array y del objeto que deseas modificar
         const updatedOrderList = [...orderList];
         const updatedPizza = { ...pizzaEnOrden };
         updatedPizza.quantity = updatedPizza.quantity + 1;
-
-        // Reemplaza el objeto en la copia del array
         const index = updatedOrderList.findIndex((pizza) => pizza.id === id);
         updatedOrderList[index] = updatedPizza;
-      
-        // Actualiza el estado con la copia modificada
+
         setOrderList(updatedOrderList);
+        toast("Agregada 🛒🍕 1" + updatedPizza.name);
       } else {
         console.log("nueva");
         const addToOrder = pizzas.find((pizza) => pizza.id === id);
         addToOrder.quantity = 1;
 
-        // Agrega el nuevo objeto al array
         const updatedOrderList = [...orderList, addToOrder];
-        // Actualiza el estado con la copia modificada
+
         setOrderList(updatedOrderList);
+        toast("Agregada 🛒🍕 1 de" + addToOrder.name);
       }
-      
     }
   };
 
@@ -50,21 +46,25 @@ const OrderDetailProvider = ({ children }) => {
       const pizzaEnOrden = orderList.find((pizza) => pizza.id === id);
       if (pizzaEnOrden && pizzaEnOrden.quantity === 1) {
         console.log("eliminar");
-        // Filtra el objeto a eliminar
         const updatedOrderList = orderList.filter((pizza) => pizza.id !== id);
         setOrderList(updatedOrderList);
+        toast(
+          "⚠️Eliminaste Todas Las Pizza " +
+            pizzaEnOrden.name +
+            " vuelve a seleccionar una pizza"
+        );
       } else {
         console.log("restar");
-        // Crea una copia del array y del objeto que deseas modificar
+
         const updatedOrderList = [...orderList];
         const updatedPizza = { ...pizzaEnOrden };
         updatedPizza.quantity = updatedPizza.quantity - 1;
 
-        // Reemplaza el objeto en la copia del array
         const index = updatedOrderList.findIndex((pizza) => pizza.id === id);
         updatedOrderList[index] = updatedPizza;
-        // Actualiza el estado con la copia modificada
+
         setOrderList(updatedOrderList);
+        toast("✖️Eliminaste 1 pizza " + pizzaEnOrden.name);
       }
     }
   };

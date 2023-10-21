@@ -1,5 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import { Routes, Route } from "react-router-dom";
 import Home from "./views/Home";
 import Navigation from "./components/Navigation";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/pizza/:idPizza" element={<PizzaDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      
     </>
   );
 }
