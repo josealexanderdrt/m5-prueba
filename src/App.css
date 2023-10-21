@@ -6,15 +6,6 @@ border-radius: 10px;
 }
 
 
-.gallery {
-  display: grid;
-  gap: 10px;
-}
-
-
-.grid-columns-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
 
 .headerBox {
   background-image: url(assets/header_bg.jpg);
@@ -23,4 +14,9 @@ border-radius: 10px;
   text-align: center;
   justify-items: center;
   align-items: center;
+}
+
+
+.card {
+  margin: 20px;
 }

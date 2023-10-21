@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { PizzaContext } from "../context/PizzaProvider";
 import { OrderDetailContext } from "../context/OrderDetailProvider";
 import { Card, Button, Container } from "react-bootstrap";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const PizzaList = () => {
   const { pizzas, setPizzas } = useContext(PizzaContext);
-  const { orderList, addToOrderDetail } = useContext(OrderDetailContext);
+  const { addToOrderDetail } = useContext(OrderDetailContext);
 
 
 const navigate = useNavigate()
@@ -18,10 +18,13 @@ const goToPizzaDetail = (idPizza) =>{
 
   return (
     <>
-      <div className="gallery grid-columns-3 p-3">
+      <div className="container  p-4">
+        <div className="row row-cols-3 g-4">
+
+        
         {pizzas.map((pizza, i) => (
 
-            <Card key={i} style={{ width: "18rem" }} className="">
+            <Card key={i} style={{ width: "20rem" }} className="card">
               <Card.Img
                 variant="top"
                 src={pizza.img}
@@ -56,6 +59,8 @@ const goToPizzaDetail = (idPizza) =>{
             </Card>
          
         ))}
+
+</div>
       </div>
     </>
   );
