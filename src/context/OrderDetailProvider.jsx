@@ -27,7 +27,7 @@ const OrderDetailProvider = ({ children }) => {
         updatedOrderList[index] = updatedPizza;
 
         setOrderList(updatedOrderList);
-        toast("Agregada 🛒🍕 1" + updatedPizza.name);
+        toast("Agregada 🛒🍕 1 " + updatedPizza.name);
       } else {
         console.log("nueva");
         const addToOrder = pizzas.find((pizza) => pizza.id === id);
@@ -36,7 +36,7 @@ const OrderDetailProvider = ({ children }) => {
         const updatedOrderList = [...orderList, addToOrder];
 
         setOrderList(updatedOrderList);
-        toast("Agregada 🛒🍕 1 de" + addToOrder.name);
+        toast("Agregada 🛒🍕 1 " + addToOrder.name);
       }
     }
   };

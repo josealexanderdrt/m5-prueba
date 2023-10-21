@@ -25,10 +25,10 @@ const PizzaDetail = () => {
     <>
      <div className="boxPizzaSelected">
     {pizzaSelected?(
-          <Container className=" d-flex">
+          <Container className=" boxPizzaSelected d-flex">
             <Card style={{ width: "28rem" }}>
               <Card.Img
-                variant="top"
+                variant="bot"
                 src={pizzaSelected.img}
                 alt={"Pizza " + pizzaSelected.name}
               />
